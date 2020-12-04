@@ -1,0 +1,47 @@
+@import url("./reset.css");
+
+:root{
+  --faixa-escura: #1a1a1a;
+  --faixa-branca: #fff;
+  --fonte_principal: "Noto Serif"
+}
+
+body{
+  background: linear-gradient(
+    to right, var(--faixa-escura) 30%, var(--faixa-branca) 30%
+    );
+  font-family: var(--fonte_principal);
+}
+
+#app{
+  padding: 0 5rem;
+}
+
+/* Lista Produtos */
+
+.produtos{
+  max-width: 56rem;
+  margin: 6rem auto 0 auto;
+}
+
+.produto{
+  display: flex;
+  align-items: center;
+  margin-bottom: 4.5rem;
+  background: var(--faixa-branca);
+  box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, .2);
+}
+
+.produto_img{
+  max-width: 20rem;
+  margin-right: 3rem;
+}
+
+.produto_titulo{
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.produto_preco{
+  color: rgba(0, 0, 0, .5);
+}

@@ -6,12 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="./lib/vue.js"></script>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
   <title>Loja Vue</title>
 </head>
 
 <body>
   <div id="app">
-    <span>{{produtos}}</span>
+    <section class="produtos">
+      <div v-for="({img, nome, id, preco}) in produtos" :key="id" class="produto">
+        <img :src="img" :alt="nome" class="produto_img">
+        <div class="produto_info">
+          <span class="produto_preco">{{preco}}</span>
+          <h2 class="produto_titulo">{{nome}}</h2>
+        </div>
+      </div>
+    </section>
   </div>
   <script src="./js/main.js"></script>
 </body>
