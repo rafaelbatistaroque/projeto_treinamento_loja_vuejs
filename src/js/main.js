@@ -5,7 +5,8 @@ const vm = new Vue({
     produto: false,
     carrinho: [],
     mensagemAlerta: "",
-    ativarMensagem: false
+    ativarMensagem: false,
+    modalCarrinho: false
   },
   filters: {
     numeroPreco(valor) {
@@ -46,6 +47,10 @@ const vm = new Vue({
       if (target === currentTarget)
         this.produto = false;
     },
+    fecharModalCarrinho({ currentTarget, target }) {
+      if (target === currentTarget)
+        this.modalCarrinho = false;
+    },
     adicionarItemNoCarrinho() {
       this.debitarDoEstoque();
       const { id, nome, preco } = this.produto;
@@ -75,6 +80,9 @@ const vm = new Vue({
     router() {
       const hash = document.location.hash;
       hash && this.obterProduto(hash.replace("#", ""));
+    },
+    abrirCarrinho() {
+      this.modalCarrinho = true;
     }
   },
   watch: {
