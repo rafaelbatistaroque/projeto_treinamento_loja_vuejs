@@ -14,13 +14,17 @@
 <body>
   <div id="app">
     <section class="produtos">
-      <div v-for="({img, nome, id, preco}) in produtos" :key="id" class="produto">
+      <div v-for="({img, nome, id, preco}) in produtos" @click="obterProduto(id)" :key="id" class="produto">
         <img :src="img" :alt="nome" class="produto_img">
         <div class="produto_info">
           <span class="produto_preco">{{preco | numeroPreco}}</span>
           <h2 class="produto_titulo">{{nome}}</h2>
         </div>
       </div>
+    </section>
+
+    <section class="modal">
+      {{produto}}
     </section>
   </div>
   <script src="./js/main.js"></script>

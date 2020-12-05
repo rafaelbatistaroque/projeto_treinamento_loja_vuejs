@@ -29,7 +29,14 @@ body{
   align-items: center;
   margin-bottom: 4.5rem;
   background: var(--faixa-branca);
-  box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, .2);
+  box-shadow: 0 0 2rem .5rem rgba(0, 0, 0, .2);
+  cursor: pointer;
+  transition: .2s ease-out;
+}
+
+.produto:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 1rem -.1rem rgba(0, 0, 0, .2);
 }
 
 .produto_img{
