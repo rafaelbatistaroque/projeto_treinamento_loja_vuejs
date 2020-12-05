@@ -110,13 +110,14 @@ body{
   padding: 50px 50px 50px 0;
 }
 
-.animarDaDireita{
+.animarDeCima{
   opacity: 0;
-  transform: translate3D(50px, 0, 0);
-  animation: animarDaEsquerda .3s forwards;
+  transform: translate3d(0, -50px, 0);
+  animation: animarDeCima .3s forwards ease-out;
 }
 
-@keyframes animarDaEsquerda{
+
+@keyframes animarDeCima{
   to{
     opacity: 1;
     transform: initial;
@@ -196,5 +197,28 @@ body{
   width: 3rem;
   height: 3rem;
   font-size: 1.5rem;
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
+}
+
+/* Alerta */
+.alerta{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+}
+
+.alerta.ativo{
+  display: block;
+}
+
+.alerta_mensagem{
+  background: white;
+  display: inline-block;
+  padding: 20px 40px;
+  border: 2px solid black;
   box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
 }

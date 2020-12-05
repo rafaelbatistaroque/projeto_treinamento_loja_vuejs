@@ -35,14 +35,14 @@
       </div>
     </section>
 
-    <section @click="fecharModal" class="modal animarDaDireita" v-if="produto">
-      <div class="modal_container">
+    <section @click="fecharModal" class="modal" v-if="produto">
+      <div class="modal_container animarDeCima">
         <div class="modal_img">
           <img :src="produto.img" alt="produto.nome">
         </div>
         <div class="modal_dados">
           <button @click="produto = false" class="modal_fechar">x</button>
-          <span class="modal_preco">{{produto.preco}}</span>
+          <span class="modal_preco">{{produto.preco | numeroPreco}}</span>
           <h2 class="modal_titulo">{{produto.nome}}</h2>
           <p>{{produto.descricao}}</p>
           <button @click="adicionarItemNoCarrinho" class="modal_botao_adicionar"
@@ -59,6 +59,10 @@
         </div>
       </div>
     </section>
+
+    <div class="alerta" :class="{animarDeCima: ativarMensagem}">
+      <p class="alerta_mensagem">{{mensagemAlerta}}</p>
+    </div>
   </div>
   <script src="./js/main.js"></script>
 </body>
