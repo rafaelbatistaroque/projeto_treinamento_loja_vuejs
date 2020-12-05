@@ -71,9 +71,18 @@ const vm = new Vue({
         clearTimeout();
         this.ativarMensagem = false;
       }, 2000);
+    },
+    router() {
+      const hash = document.location.hash;
+      hash && this.obterProduto(hash.replace("#", ""));
     }
   },
   watch: {
+    produto() {
+      let { id = "", nome } = this.produto;
+      document.title = nome || "Loja Vue";
+      history.pushState(null, null, `#${id}`);
+    },
     carrinho() {
       window.localStorage.carrinho = JSON.stringify(this.carrinho);
     }
@@ -81,5 +90,6 @@ const vm = new Vue({
   created() {
     this.obterProdutos();
     this.checarLocalStorage();
+    this.router();
   }
 });

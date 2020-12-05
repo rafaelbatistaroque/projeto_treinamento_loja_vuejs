@@ -60,7 +60,7 @@
       </div>
     </section>
 
-    <div class="alerta" :class="{animarDeCima: ativarMensagem}">
+    <div class="alerta animarDeCima" v-if="ativarMensagem">
       <p class="alerta_mensagem">{{mensagemAlerta}}</p>
     </div>
   </div>

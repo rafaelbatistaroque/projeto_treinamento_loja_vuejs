@@ -116,7 +116,6 @@ body{
   animation: animarDeCima .3s forwards ease-out;
 }
 
-
 @keyframes animarDeCima{
   to{
     opacity: 1;
@@ -208,11 +207,6 @@ body{
   z-index: 10;
   width: 100%;
   text-align: center;
-  opacity: 0;
-}
-
-.alerta.ativo{
-  display: block;
 }
 
 .alerta_mensagem{
