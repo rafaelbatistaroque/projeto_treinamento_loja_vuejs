@@ -13,6 +13,18 @@
 
 <body>
   <div id="app">
+
+    <header class="header">
+      <img class="logo" src="./assets/techno.svg" alt="Techno">
+      <div class="carrinho_menu">{{carrinhoValorTotal | numeroPreco}} | {{carrinhoTotalItens}}</div>
+      <ul>
+        <li v-for="({nome}, index) in carrinho" v-if="carrinho">
+          <span>{{nome}}</span>
+          <button @click="removerItemDoCarrinho(index)">x</button>
+        </li>
+      </ul>
+    </header>
+
     <section class="produtos">
       <div v-for="({img, nome, id, preco}) in produtos" @click="abrirModal(id)" :key="id" class="produto">
         <img :src="img" :alt="nome" class="produto_img">
@@ -33,7 +45,8 @@
           <span class="modal_preco">{{produto.preco}}</span>
           <h2 class="modal_titulo">{{produto.nome}}</h2>
           <p>{{produto.descricao}}</p>
-          <button class="modal_botao_adicionar">Adicionar Item</button>
+          <button @click="adicionarItemNoCarrinho" class="modal_botao_adicionar"
+            :disabled="statusBotaoModal">{{textoBotalModal}}</button>
         </div>
         <div class="avaliacoes">
           <h2 class="avaliacaoes_subtitulo">Avaliações</h2>
