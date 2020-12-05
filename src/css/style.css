@@ -3,7 +3,8 @@
 :root{
   --faixa-escura: #1a1a1a;
   --faixa-branca: #fff;
-  --fonte_principal: "Noto Serif"
+  --fonte_principal: "Noto Serif";
+  --container: 56rem;
 }
 
 body{
@@ -17,10 +18,34 @@ body{
   padding: 0 5rem;
 }
 
+/* Header */
+.header{
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--container);
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.logo{
+  width: 5rem;
+}
+
+.carrinho_menu::after{
+  content: url("../assets/carrinho.svg");
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.carrinho_menu{
+  display: flex;
+  cursor: pointer;
+}
+
 /* Lista Produtos */
 
 .produtos{
-  max-width: 56rem;
+  max-width: var(--container);
   margin: 6rem auto 0 auto;
 }
 
@@ -126,6 +151,10 @@ body{
 }
 
 .modal_botao_adicionar:active{
+  background: #808080;
+}
+
+.modal_botao_adicionar:disabled{
   background: #808080;
 }
 
