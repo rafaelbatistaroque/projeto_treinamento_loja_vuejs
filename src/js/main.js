@@ -54,9 +54,19 @@ const vm = new Vue({
     },
     debitarDoEstoque() {
       this.produto.estoque--;
+    },
+    checarLocalStorage() {
+      if (window.localStorage.carrinho)
+        this.carrinho = JSON.parse(window.localStorage.carrinho);
+    }
+  },
+  watch: {
+    carrinho() {
+      window.localStorage.carrinho = JSON.stringify(this.carrinho);
     }
   },
   created() {
     this.obterProdutos();
+    this.checarLocalStorage();
   }
 });
