@@ -30,7 +30,7 @@
       </div>
     </section>
 
-    <section @click="fecharModal" class="modal" v-if="produto">
+    <section @click="fecharModal" class="modal modal_produto" v-if="produto">
       <div class="modal_container animarDeCima">
         <div class="modal_img">
           <img :src="produto.img" alt="produto.nome">
@@ -40,7 +40,7 @@
           <span class="modal_preco">{{produto.preco | numeroPreco}}</span>
           <h2 class="modal_titulo">{{produto.nome}}</h2>
           <p>{{produto.descricao}}</p>
-          <button @click="adicionarItemNoCarrinho" class="modal_botao_adicionar"
+          <button @click="adicionarItemNoCarrinho" class="botao modal_botao_adicionar"
             :disabled="statusBotaoModal">{{textoBotalModal}}</button>
         </div>
         <div class="avaliacoes">
@@ -55,9 +55,9 @@
       </div>
     </section>
 
-    <section class="carrinho_modal" @click="fecharModalCarrinho" v-if="modalCarrinho">
+    <section class="modal carrinho_modal" @click="fecharModalCarrinho" v-if="modalCarrinho">
       <div class="carrinho_container animarDeCima">
-        <button @click="fecharModalCarrinho" class="carrinho_fechar">x</button>
+        <button @click="fecharModalCarrinho" class="modal_fechar">x</button>
         <h2 class="carrinho_titulo">Carrinho</h2>
         <div v-if="carrinhoTotalItens > 0">
           <ul>
@@ -68,7 +68,7 @@
             </li>
           </ul>
           <span class="carrinho_total">{{carrinhoValorTotal | numeroPreco}}</span>
-          <button class="carrinho_finalizar" @click="fecharModalCarrinho">Finalizar Compra</button>
+          <button class="botao carrinho_finalizar" @click="fecharModalCarrinho">Finalizar Compra</button>
         </div>
         <span v-else>Carrinho Vazio</span>
       </div>
