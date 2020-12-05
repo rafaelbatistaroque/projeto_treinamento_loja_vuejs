@@ -85,6 +85,19 @@ body{
   padding: 50px 50px 50px 0;
 }
 
+.animarDaDireita{
+  opacity: 0;
+  transform: translate3D(50px, 0, 0);
+  animation: animarDaEsquerda .3s forwards;
+}
+
+@keyframes animarDaEsquerda{
+  to{
+    opacity: 1;
+    transform: initial;
+  }
+}
+
 .modal_img{
   grid-column: 1;
   box-shadow: 0 0 2rem .1rem rgba(0, 0, 0, .5);
@@ -112,7 +125,7 @@ body{
   font-family: var(--fonte_principal);
 }
 
-modal_botao_adicionar:active{
+.modal_botao_adicionar:active{
   background: #808080;
 }
 
@@ -140,4 +153,19 @@ modal_botao_adicionar:active{
 
 .avaliacao_usuario{
   font-weight: bold;
+}
+
+.modal_fechar{
+  background: white;
+  border: 2px solid black;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: -1.2rem;
+  right: -1.2rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
 }
