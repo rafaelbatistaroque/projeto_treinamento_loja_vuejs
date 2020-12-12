@@ -1,4 +1,4 @@
-# Loja Vue
+# Loja Vuejs
 
 
 ## ⌛ Status do Projeto
